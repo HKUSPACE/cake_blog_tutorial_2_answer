@@ -21,7 +21,13 @@
 array('controller' => 'posts', 'action' => 'view', $post['Post']['id'])); ?>
         </td>
 		<td>
-			<?php
+            <?php
+                echo $this->Html->link(
+                    'Comments',
+                    array('controller' => 'comments', 'action' => 'index', $post['Post']['id'])
+                );
+            ?>
+ 			<?php
                 echo $this->Form->postLink(
                     'Delete',
                     array('action' => 'delete', $post['Post']['id']),
